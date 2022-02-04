@@ -1,6 +1,12 @@
 import random
 
-class Hider:
+
+#List of random words
+#Word lengths
+#Each word letter & index for each letter
+
+
+class List:
     """The person hiding from the Seeker. 
     
     The responsibility of Hider is to keep track of its location and distance from the seeker. 

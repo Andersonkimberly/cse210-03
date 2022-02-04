@@ -1,5 +1,9 @@
 import random
 
+
+# Guesses letter between a-z
+# Interacts with puzzle through director
+
 class Seeker:
     """The person looking for the Hider . 
     
