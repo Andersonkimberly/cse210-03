@@ -1,6 +1,6 @@
 import random
 
-
+# Sam
 # Guesses letter between a-z
 # Interacts with puzzle through director
 

@@ -3,6 +3,8 @@ from game.hider import Hider
 from game.seeker import Seeker
 
 
+# Ryker
+
 class Director:
     """A person who directs the game. 
     
