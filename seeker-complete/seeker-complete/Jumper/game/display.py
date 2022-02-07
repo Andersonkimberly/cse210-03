@@ -54,12 +54,11 @@ class Display:
                 self._lines_to_letter.append("_")
         # Every round after the initializion
         else:
-            self._letter_guess = letter
-            self.letter_guess = False
+            self._letter_guess = False
             for item in self._given_word:
                 if item == letter:
                     self._lines_to_letter[self._given_word.index[item]] = letter
-                    self.letter_guess = True
+                    self._letter_guess = True
 
         # Prints out the word with spaces, "_", and correctly guessed letters
         for item in self._lines_to_letter:
