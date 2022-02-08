@@ -17,15 +17,14 @@ class List:
     """
 
     def __init__(self):
-        """Constructs a new Hider.
+        """Constructs a new List of words.
 
         Args:
             self (Hider): An instance of Hider.
         """
-        self._location = random.randint(1, 1000)
-        self._distance = [0, 0] # start with two so get_hint always works
+        self.list = []
     
-    def get_hint(self):
+    def get_list(self):
         """Gets a hint for the seeker.
 
         Args:
@@ -34,14 +33,7 @@ class List:
         Returns:
             string: A hint for the seeker.
         """
-        hint = "(-.-) Nap time."
-        if self._distance[-1] == 0:
-            hint = "(;.;) You found me!"
-        elif self._distance[-1] > self._distance[-2]:
-            hint = "(^.^) Getting colder!"
-        elif self._distance[-1] < self._distance[-2]:
-            hint = "(>.<) Getting warmer!"
-        return hint
+        self.list = ["star","beach","countryside","meadow","rainforest","wilderness","flower",]
 
     def is_found(self):
         """Whether or not the hider has been found.
