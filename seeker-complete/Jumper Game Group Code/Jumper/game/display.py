@@ -99,3 +99,7 @@ class Display:
             self._parachute_string += "\n"            
 
             return self._parachute_string
+        
+    def _is_dead(self):
+        
+        return (self._parachute[19] == "x")

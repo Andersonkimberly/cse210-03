@@ -24,7 +24,7 @@ class Director:
         """
         self._display = Display()
         self._is_playing = True
-        self._word = List()
+        self._list = List()
         self._terminal_service = TerminalService()
         
     def start_game(self):
@@ -33,35 +33,34 @@ class Director:
         Args:
             self (Director): an instance of Director.
         """
-        while self._is_playing:
-            self._get_inputs()
-            self._do_updates()
-            self._do_outputs()
+        random_word = self._list.random_word()
+        letter_guess = ""
 
-    def _get_inputs(self):
+        self._terminal_service.write_text(self._display.display_word(str(random_word)))
+        
+        self._terminal_service.write_text(self._display.display_parachute())
+
+        while self._is_playing:
+            self._get_inputs(random_word)
+            self._do_outputs(random_word, letter_guess)
+
+    def _get_inputs(self, random_word):
         """Moves the seeker to a new location.
 
         Args:
             self (Director): An instance of Director.
         """
-        letter_guess = self._terminal_service.read_number("\nGuess a letter: ")
-        self._seeker.move_location(new_location)
-        
-    def _do_updates(self):
-        """Keeps watch on where the seeker is moving.
+        letter_guess = self._terminal_service.read_text("\nGuess a letter: ")
 
-        Args:
-            self (Director): An instance of Director.
-        """
-        self._hider.watch_seeker(self._seeker)
         
-    def _do_outputs(self):
+        
+    def _do_outputs(self, letter_guess, random_word):
         """Provides a hint for the seeker to use.
 
         Args:
             self (Director): An instance of Director.
         """
-        hint = self._hider.get_hint()
-        self._terminal_service.write_text(hint)
-        if self._hider.is_found():
+        self._terminal_service.write_text(self._display.display_word())
+        self._terminal_service.write_text(self._display.display_parachute())
+        if self._display._is_dead():
             self._is_playing = False
