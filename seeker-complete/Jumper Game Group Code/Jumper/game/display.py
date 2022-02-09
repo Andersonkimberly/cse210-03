@@ -26,7 +26,7 @@ class Display:
         self._letter_guess = False
         self._lines_to_letter = []
         self._lines_to_letter_string = ""
-        self._parachute = ["  ", "___", "\n", " ", "/", "___", "\\", "\n", " ", "\\", "  ", "/", "\n", "  ", "\\", " ", "/", "\n", "   ", "o", "\n  /|\\\n  / \\\n\n^^^^^^^"]
+        self._parachute = ["  ", "___", "\n", " ", "/", "___", "\\", "\n", " ", "\\", "   ", "/", "\n", "  ", "\\", " ", "/", "\n", "   ", "o", "\n  /|\\\n  / \\\n\n^^^^^^^"]
         self._p_index = [1, 4, 5, 6, 9, 11, 14, 16]
         self._parachute_string = ""
     
