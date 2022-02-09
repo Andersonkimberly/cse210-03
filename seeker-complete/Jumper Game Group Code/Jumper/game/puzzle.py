@@ -7,34 +7,37 @@ import random
 
 
 class List:
-    """The person hiding from the Seeker. 
+    """Contains a list of words that will be chosen at random. 
     
-    The responsibility of Hider is to keep track of its location and distance from the seeker. 
+    The responsibility of List is to generate a random word.
     
     Attributes:
-        _location (int): The location of the hider (1-1000).
-        _distance (List[int]): The distance from the seeker.
+        _list (List[str]): list of words to be chosen at random.
+        _word (str): The chosen word from the list.
     """
 
     def __init__(self):
         """Constructs a new List of words.
 
         Args:
-            self (Hider): An instance of Hider.
+            self (List): An instance of list.
         """
         self._list = ["star","beach","countryside","meadow","rainforest","wilderness","flower"]
         self._word = ""
         self.random_word()
     def random_word(self):
-        """Gets a hint for the seeker.
+        """Selects a random word from the list
         
         Args:
-            self (Hider): An instance of Hider.
+            self (List): An instance of List.
         
         Returns:
-            string: A hint for the seeker."""
+            string: Word from the list"""
         random_index= random.randint(0,7)
         self._word= self._list[random_index]
+
+    def word_to_list(self):
+        list_of_letters= list(self.word)
 
     def get_word(self):
         """Whether or not the hider has been found.
