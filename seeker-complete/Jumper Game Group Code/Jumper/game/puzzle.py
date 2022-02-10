@@ -22,7 +22,7 @@ class List:
         Args:
             self (List): An instance of list.
         """
-        self._list = ["star","beach","countryside","meadow","rainforest","wilderness","flower"]
+        self._list = ["star","beach","countryside","meadow","forest","canopy","flower"]
         self._word = ""
         self.random_word()
     def random_word(self):
