@@ -107,5 +107,4 @@ class Display:
         
         return (self._parachute[19] == "x")
 
-    def _winner(self):
-        return (self._given_word == self._lines_to_letter)
+   
