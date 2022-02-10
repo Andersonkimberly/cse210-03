@@ -58,7 +58,7 @@ class Display:
             self._letter_guess = False
             for item in self._given_word:
                 if item == letter:
-                    self._lines_to_letter[self._given_word.index[item]] = letter
+                    self._lines_to_letter[self._given_word.index(item)] = letter
                     self._letter_guess = True
 
         # Prints out the word with spaces, "_", and correctly guessed letters
