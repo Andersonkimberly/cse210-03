@@ -96,7 +96,7 @@ class Display:
                 self._parachute.pop(19)
                 self._parachute.insert(19, "x")
             self._p_index.pop(0)
-            
+
             for item in self._parachute:
                 self._parachute_string += item
             self._parachute_string += "\n"            
@@ -108,5 +108,9 @@ class Display:
         return (self._parachute[19] == "x")
 
     def winner(self):
+<<<<<<< HEAD
       
+=======
+
+>>>>>>> e18ba9fd1a2a6dcfd4673d042611fa36d982fb80
         return (self._given_word == self._lines_to_letter)
