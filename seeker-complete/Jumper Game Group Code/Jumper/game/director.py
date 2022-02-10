@@ -64,3 +64,5 @@ class Director:
         self._terminal_service.write_text(self._display.display_parachute())
         if self._display._is_dead():
             self._is_playing = False
+        if self._display._winner():
+            self._is_playing = False
