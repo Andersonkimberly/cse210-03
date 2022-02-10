@@ -23,11 +23,11 @@ class Display:
         """
         self._given_word = []
         self._length = 0
-        self._letter_guess = False
+        self._letter_guess = True
         self._lines_to_letter = []
         self._lines_to_letter_string = ""
         self._parachute = ["  ", "___", "\n", " ", "/", "___", "\\", "\n", " ", "\\", "   ", "/", "\n", "  ", "\\", " ", "/", "\n", "   ", "o", "\n  /|\\\n  / \\\n\n^^^^^^^"]
-        self._p_index = [1, 4, 5, 6, 9, 11, 14, 16]
+        self._p_index = [1, 4, 6, 5, 9, 11, 14, 16]
         self._parachute_string = ""
     
     def display_word(self, word, letter = ""):
@@ -87,15 +87,16 @@ class Display:
             return self._parachute_string
         # Remove part of parachute and replace with a " "
         else:
-            if self._p_index[0] >= 16:
+            if self._p_index[0] <= 16:
                 self._parachute.pop(self._p_index[0])
                 self._parachute.insert(self._p_index[0], " ")
-                self._p_index.pop(0)
+                
             # The last round will also change the head into an "x"
             if (self._p_index[0] == 16):
                 self._parachute.pop(19)
                 self._parachute.insert(19, "x")
-
+            self._p_index.pop(0)
+            
             for item in self._parachute:
                 self._parachute_string += item
             self._parachute_string += "\n"            
