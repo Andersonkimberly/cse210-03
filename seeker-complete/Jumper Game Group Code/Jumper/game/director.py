@@ -26,6 +26,8 @@ class Director:
         self._is_playing = True
         self._list = List()
         self._terminal_service = TerminalService()
+        self.random_word = self._list.random_word()
+        self.letter_guess = ""
         
     def start_game(self):
         """Starts the game by running the main game loop.
@@ -33,34 +35,32 @@ class Director:
         Args:
             self (Director): an instance of Director.
         """
-        random_word = self._list.random_word()
-        letter_guess = ""
 
-        self._terminal_service.write_text(self._display.display_word(str(random_word)))
+        self._terminal_service.write_text(self._display.display_word(str(self.random_word)))
         
         self._terminal_service.write_text(self._display.display_parachute())
 
         while self._is_playing:
-            self._get_inputs(random_word)
-            self._do_outputs(random_word, letter_guess)
+            self._get_inputs()
+            self._do_outputs()
 
-    def _get_inputs(self, random_word):
+    def _get_inputs(self):
         """Moves the seeker to a new location.
 
         Args:
             self (Director): An instance of Director.
         """
-        letter_guess = self._terminal_service.read_text("\nGuess a letter: ")
+        self.letter_guess = self._terminal_service.read_text("\nGuess a letter: ")
 
         
         
-    def _do_outputs(self, letter_guess, random_word):
+    def _do_outputs(self):
         """Provides a hint for the seeker to use.
 
         Args:
             self (Director): An instance of Director.
         """
-        self._terminal_service.write_text(self._display.display_word())
+        self._terminal_service.write_text(self._display.display_word(self.random_word, self.letter_guess))
         self._terminal_service.write_text(self._display.display_parachute())
         if self._display._is_dead():
             self._is_playing = False
