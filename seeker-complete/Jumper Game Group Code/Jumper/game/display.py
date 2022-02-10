@@ -96,7 +96,7 @@ class Display:
                 self._parachute.pop(19)
                 self._parachute.insert(19, "x")
             self._p_index.pop(0)
-            
+
             for item in self._parachute:
                 self._parachute_string += item
             self._parachute_string += "\n"            
@@ -106,3 +106,7 @@ class Display:
     def _is_dead(self):
         
         return (self._parachute[19] == "x")
+
+    def winner(self):
+
+        return (self._given_word == self._lines_to_letter)
