@@ -108,9 +108,5 @@ class Display:
         return (self._parachute[19] == "x")
 
     def winner(self):
-<<<<<<< HEAD
-      
-=======
 
->>>>>>> e18ba9fd1a2a6dcfd4673d042611fa36d982fb80
         return (self._given_word == self._lines_to_letter)
