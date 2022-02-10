@@ -44,6 +44,7 @@ class Display:
         Returns:
             _lines_to_letters_string (string): the string built to display the word.
         """
+        self._lines_to_letter_string = ""
         # Only runs once for the first round before a guess is made
         if letter == "":
             self._length = len(word)
@@ -78,6 +79,7 @@ class Display:
         Returns:
             _parachute_string (string): the string built to display the parachute.
         """
+        self._parachute_string = ""
         # If they guessed correctly, no change to the parachute
         if self._letter_guess:
             for item in self._parachute:

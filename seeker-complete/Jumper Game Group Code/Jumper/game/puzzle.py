@@ -34,7 +34,7 @@ class List:
         Returns:
             string: Word from the list"""
         random_index= random.randint(0,6)
-        self._word= self._list[random_index]
+        return self._list[random_index]
 
 
     # def get_word(self):
